@@ -1,1 +1,11 @@
 == elmの勉強
+
+----
+$ git clone https://github.com/evancz/elm-architecture-tutorial.git
+----
+
+----
+$ elm reactor -a=0.0.0.0
+----
+
+0.19では-a=0.0.0.0ができない。。

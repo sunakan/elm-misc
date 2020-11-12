@@ -17,9 +17,9 @@ include makefiles/help.mk
 build:
 	docker-compose build
 
-.PHONY: bash
-bash:
-	docker-compose run --rm elm bash
+.PHONY: sh
+sh:
+	docker-compose run --rm elm sh
 
 .PHONY: chown
 chown:
