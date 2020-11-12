@@ -13,3 +13,14 @@ include makefiles/help.mk
 ################################################################################
 # タスク
 ################################################################################
+.PHONY: build
+build:
+	docker-compose build
+
+.PHONY: bash
+bash:
+	docker-compose run --rm elm bash
+
+.PHONY: chown
+chown:
+	sudo chown $(shell id -u):$(shell id -g) -R ./app/
