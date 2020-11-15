@@ -1,11 +1,28 @@
 == elmの勉強
 
+.実行
 ----
-$ git clone https://github.com/evancz/elm-architecture-tutorial.git
-----
-
-----
-$ elm reactor -a=0.0.0.0
+$ cd app
+$ elm reactor
 ----
 
-0.19では-a=0.0.0.0ができない。。
+==== 開発環境
+
+`anyenv` で `nodenv` 入れてやった
+
+----
+$ node --version
+v14.15.0
+----
+
+.elm入れるまで
+----
+$ sudo apt update
+$ sudo apt install -y zip
+$ VERSION=0.19.1 && echo "curl -L -o elm.gz https://github.com/elm/compiler/releases/download/${VERSION}/binary-for-linux-64-bit.gz"
+$ gnuzip elm.gz
+$ chmod +x elm
+$ mv elm /usr/local/bin/
+$ elm --version
+0.19.1
+----
