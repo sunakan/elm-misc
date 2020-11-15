@@ -13,13 +13,13 @@ include makefiles/help.mk
 ################################################################################
 # タスク
 ################################################################################
-.PHONY: build
-build:
-	docker-compose build
+.PHONY: up
+up:
+	docker-compose up
 
-.PHONY: sh
-sh:
-	docker-compose run --rm elm sh
+.PHONY: down
+down:
+	docker-compose down
 
 .PHONY: chown
 chown:

@@ -2,16 +2,13 @@
 version: '3.8'
 
 services:
-  elm:
-    #image: codesimple/elm:0.19
-    build: .
-    container_name: elm
-    hostname: elm
-    entrypoint: ''
-    working_dir: /var/local/app/
+  nginx:
+    image: nginx:stable
+    container_name: nginx
+    hostname: nginx
     ports:
-      - 8000:8000
+      - 80:80
     volumes:
       - type: bind
-        source: ${PWD}/elm-architecture-tutorial/
-        target: /var/local/app/
+        source: ${PWD}/app/
+        target: /usr/share/nginx/html/
