@@ -4,6 +4,18 @@
 ----
 $ cd app
 $ elm reactor
+8000番ポートで起動するので、http://ホスト名:8000/で見る
+----
+
+.デバッグ実行
+----
+$ cd app
+$ elm make src/Hoge.elm --debug
+$ docker-compose up
+$ cd ..
+$ docker-compose up
+80番ポートでNginxが経つので、http://ホスト名/で見る
+(右下にデバッグボタンが!!)
 ----
 
 ==== 開発環境
