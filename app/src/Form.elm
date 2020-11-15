@@ -34,6 +34,7 @@ init =
 type Msg
     = Input String
     | Submit
+    | Delete Int
 
 update : Msg -> Model -> Model
 update msg model =
@@ -43,8 +44,17 @@ update msg model =
         Submit ->
             { model
                 | input = ""
-                , memos = { body = model.input, index = 0 } :: (List.indexedMap (\i memo -> { memo | index = i+1}) model.memos)
+                , memos = reindex ({ body = model.input, index = 0 } :: model.memos)
             }
+        Delete index ->
+            { model
+                | input = ""
+                , memos = reindex (List.append (List.take index model.memos) (List.drop (index+1) model.memos))
+            }
+
+reindex : List IndexedMemo -> List IndexedMemo
+reindex memos =
+    List.indexedMap (\i memo -> { memo | index = i }) memos
 
 -- VIEW
 view : Model -> Html Msg
@@ -62,5 +72,5 @@ viewMemo : IndexedMemo -> Html Msg
 viewMemo memo =
     li []
         [ text ((String.fromInt memo.index) ++ "：" ++ memo.body)
-        , button [] [ text "削除" ]
+        , button [ onClick (Delete memo.index) ] [ text "削除" ]
         ]
