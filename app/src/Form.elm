@@ -15,9 +15,13 @@ main =
         }
 
 -- MODEL
+type alias IndexedMemo =
+    { body : String
+    , index : Int
+    }
 type alias Model =
     { input : String
-    , memos : List String
+    , memos : List IndexedMemo
     }
 
 init : Model
@@ -39,7 +43,7 @@ update msg model =
         Submit ->
             { model
                 | input = ""
-                , memos = model.input :: model.memos
+                , memos = { body = model.input, index = 0 } :: (List.indexedMap (\i memo -> { memo | index = i+1}) model.memos)
             }
 
 -- VIEW
@@ -54,6 +58,9 @@ view model =
             ]
         , ul [] (List.map viewMemo model.memos)
         ]
-viewMemo : String -> Html Msg
+viewMemo : IndexedMemo -> Html Msg
 viewMemo memo =
-    li [] [ text memo ]
+    li []
+        [ text ((String.fromInt memo.index) ++ "：" ++ memo.body)
+        , button [] [ text "削除" ]
+        ]
