@@ -33,6 +33,7 @@ init _ =
     ( Loading
     , Http.get
         { url = "https://elm-lang.org/assets/public-opinion.txt"
+          --url = "https://elm-lang.org/not-existed"
         , expect = Http.expectString GotText
         }
     )
