@@ -4,8 +4,9 @@ import Color
 import Html exposing (Html)
 import TypedSvg exposing (circle, svg)
 import TypedSvg.Attributes exposing (cx, cy, fill, r, stroke, strokeWidth, viewBox)
-import TypedSvg.Types exposing (Paint(..), px)
 import TypedSvg.Core exposing (Svg)
+import TypedSvg.Types exposing (Paint(..), px)
+
 
 myCircle : Svg msg
 myCircle =
@@ -18,6 +19,7 @@ myCircle =
         , stroke <| Paint <| Color.rgba 0.8 0 0 0.5
         ]
         []
+
 
 main : Html msg
 main =

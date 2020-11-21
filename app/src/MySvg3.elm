@@ -3,10 +3,10 @@ module MySvg3 exposing (main)
 import Color
 import Html exposing (Html)
 import TypedSvg exposing (..)
-import TypedSvg.Attributes exposing (attributeName, attributeType, animateTransformType, from, from3, to, to3, begin, dur, repeatCount, additive, stroke, fill)
-import TypedSvg.Types exposing (..)
+import TypedSvg.Attributes exposing (additive, animateTransformType, attributeName, attributeType, begin, dur, fill, from, from3, repeatCount, stroke, to, to3)
+import TypedSvg.Attributes.InPx exposing (height, width, x, y)
 import TypedSvg.Core exposing (Svg)
-import TypedSvg.Attributes.InPx exposing (x, y, width, height)
+import TypedSvg.Types exposing (..)
 
 
 myScale : Svg msg

@@ -5,23 +5,22 @@ import Html exposing (Html)
 import TypedSvg exposing (rect, svg)
 import TypedSvg.Attributes exposing (fill, stroke, viewBox)
 import TypedSvg.Attributes.InPx exposing (height, strokeWidth, width, x, y)
-import TypedSvg.Types exposing (Paint(..))
 import TypedSvg.Core exposing (Svg)
+import TypedSvg.Types exposing (Paint(..))
 
 
 myRectangle : Svg msg
 myRectangle =
-        rect
-            [ x 100
-            , y 100
-            , width 200
-            , height 200
-            , fill <| Paint Color.white
-            , strokeWidth 2
-            , stroke <| Paint Color.black
-            ]
-            []
-
+    rect
+        [ x 100
+        , y 100
+        , width 200
+        , height 200
+        , fill <| Paint Color.white
+        , strokeWidth 2
+        , stroke <| Paint Color.black
+        ]
+        []
 
 
 main : Html msg
