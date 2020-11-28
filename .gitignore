@@ -839,3 +839,4 @@ rq
 elm-architecture-tutorial
 app/index.html
 app/main.js
+dist/*
