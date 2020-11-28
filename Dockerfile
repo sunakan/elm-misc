@@ -9,3 +9,6 @@ RUN curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/b
   && gunzip elm.gz \
   && chmod +x elm \
   && mv elm /usr/local/bin/
+
+RUN apt-get -qq update \
+  && apt-get -qq -y install curl git openssl make

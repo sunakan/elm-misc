@@ -10,5 +10,14 @@ services:
       - 80:80
     volumes:
       - type: bind
-        source: ${PWD}/app/
+        source: ${PWD}/dist/
         target: /usr/share/nginx/html/
+  elm:
+    image: sunakan/elm:0.19.1
+    container_name: elm
+    hostname: elm
+    working_dir: /usr/share/elm/
+    volumes:
+      - type: bind
+        source: ${PWD}/
+        target: /usr/share/elm/
